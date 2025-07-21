@@ -1,5 +1,17 @@
 [
   {
     "id": "ddcc195915b02c5698e94d67a796d8ff812e4cea4f4deee98f01a695248b47e9"
+  },
+  {
+    "id": "9d3cf6511c1443c303890d38efeefe1bb862021f1bb6cca5941c339ffa1438fd",
+    "status": "stopped"
+  },
+  {
+    "id": "16df46a0432ea8b45bcf37ee7f2ee320bc2ef773ffb1a698057aa6ac624245d3",
+    "status": "running",
+    "image": "ubuntu",
+    "user": "mincloud",
+    "tag": "ml-env",
+    "created_at": "2025-07-21T02:05:50.262814Z"
   }
 ]

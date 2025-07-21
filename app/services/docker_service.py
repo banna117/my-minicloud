@@ -17,3 +17,10 @@ def list_containers():
         }
         for c in containers
     ]
+def stop_container(container_id):
+    try:
+        container = client.containers.get(container_id)
+        container.stop()
+        return True
+    except docker.errors.NotFound:
+        return False
