@@ -19,15 +19,25 @@ def get_resources():
     query_user = request.args.get('user')
     query_status = request.args.get('status')
     query_tag = request.args.get('tag')
+    group_by_user = request.args.get('group_by_user', 'false').lower() == 'true'
 
     containers = load_state()
-    
+
+    # 필터링
     if query_user:
         containers = [c for c in containers if c.get('user') == query_user]
     if query_status:
         containers = [c for c in containers if c.get('status') == query_status]
     if query_tag:
         containers = [c for c in containers if c.get('tag') == query_tag]
+
+    # 그룹화 (옵션)
+    if group_by_user:
+        result = {}
+        for c in containers:
+            user = c.get('user', 'unknown')
+            result.setdefault(user, []).append(c)
+        return jsonify(result), 200
 
     return jsonify(containers), 200
 
