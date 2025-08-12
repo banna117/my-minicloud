@@ -4,15 +4,23 @@ from app.utils.state import save_state, load_state, update_status
 
 resource_bp = Blueprint('resources', __name__)
 
+# app/routes/resource.py
 @resource_bp.route('/', methods=['POST'])
+@resource_bp.route('', methods=['POST'])
 def create_resource():
     data = request.get_json()
     image = data.get('image', 'ubuntu')
-    user = data.get('user','anonymous')
-    tag = data.get('tag','default')
-    container_id = launch_container(image)
-    save_state(container_id,image,user,tag)
-    return jsonify({'status': 'created', 'id': container_id}), 201
+    user = data.get('user', 'anonymous')
+    tag = data.get('tag', 'default')
+    type_ = data.get('type', 'basic')
+
+    container_id, port = launch_container(image, type_)
+    save_state(container_id, image, user, tag, type_, port)
+
+    resp = {"status": "created", "id": container_id}
+    if port:
+        resp["url"] = f"http://127.0.0.1:{port}"
+    return jsonify(resp), 201
 
 @resource_bp.route('/', methods=['GET'])
 def get_resources():

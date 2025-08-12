@@ -13,5 +13,25 @@
     "user": "mincloud",
     "tag": "ml-env",
     "created_at": "2025-07-21T02:05:50.262814Z"
+  },
+  {
+    "id": "793864c302228c25aa67309583a06e81e23f10e68ae19053e7544543ab3813f2",
+    "status": "running",
+    "image": "my-ai-inference",
+    "user": "mincloud",
+    "tag": "sentiment",
+    "type": "ai",
+    "created_at": "2025-08-12T01:48:59.495651Z"
+  },
+  {
+    "id": "6c0e45e6fb2774686d197e8854bb1ff122eb8a69422f3ae5bb7381e39932cc5c",
+    "status": "running",
+    "image": "my-ai-inference",
+    "user": "mincloud",
+    "tag": "sentiment",
+    "type": "ai",
+    "created_at": "2025-08-12T02:05:39.196575Z",
+    "port": "51275",
+    "url": "http://localhost:51275"
   }
 ]

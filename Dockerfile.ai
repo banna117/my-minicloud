@@ -1,0 +1,6 @@
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.ai.txt .
+RUN pip install -r requirements.ai.txt
+COPY app.ai.py .
+CMD ["python", "app.ai.py"]

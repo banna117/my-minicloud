@@ -14,18 +14,22 @@ def load_state():
     return []
 
 
-def save_state(container_id, image, user, tag):
+
+def save_state(container_id, image, user, tag, type_, port=None):
     state = load_state()
+    url = f"http://localhost:{port}" if port else None
     state.append({
         "id": container_id,
         "status": "running",
         "image": image,
         "user": user,
         "tag": tag,
-        "created_at": datetime.utcnow().isoformat() + "Z"
+        "type": type_,
+        "created_at": datetime.utcnow().isoformat() + "Z",
+        "port": port,
+        "url": url
     })
-    with STATE_FILE.open('w') as f:
-        json.dump(state, f, indent=2)
+    STATE_FILE.write_text(json.dumps(state, indent=2))
 
 def update_status(container_id, new_status):
     state = load_state()
