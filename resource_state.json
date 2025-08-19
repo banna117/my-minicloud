@@ -33,5 +33,41 @@
     "created_at": "2025-08-12T02:05:39.196575Z",
     "port": "51275",
     "url": "http://localhost:51275"
+  },
+  {
+    "id": "ai-inf-2gl4my",
+    "status": "running",
+    "image": "my-ai-inference:v2",
+    "user": "mincloud",
+    "tag": "k8s-demo",
+    "type": "ai",
+    "created_at": "2025-08-19T11:08:56.345950Z",
+    "port": 30735,
+    "url": "http://127.0.0.1:30735",
+    "orchestrator": "k8s"
+  },
+  {
+    "id": "ai-inf-r5ptmr",
+    "status": "running",
+    "image": "my-ai-inference:v2",
+    "user": "mincloud",
+    "tag": "k8s-demo",
+    "type": "ai",
+    "created_at": "2025-08-19T11:18:08.309294Z",
+    "port": 30515,
+    "url": "http://127.0.0.1:30515",
+    "orchestrator": "k8s"
+  },
+  {
+    "id": "ai-inf-u71k6i",
+    "status": "running",
+    "image": "my-ai-inference:v2",
+    "user": "mincloud",
+    "tag": "k8s-demo",
+    "type": "ai",
+    "created_at": "2025-08-19T11:21:14.299171Z",
+    "port": 32688,
+    "url": "http://127.0.0.1:32688",
+    "orchestrator": "k8s"
   }
 ]
